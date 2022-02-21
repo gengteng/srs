@@ -319,7 +319,7 @@ srs_error_t SrsDtlsCertificate::initialize()
 
         X509_set_version(dtls_cert, 2);
         srs_assert(X509_set_pubkey(dtls_cert, dtls_pkey) == 1);
-        srs_assert(X509_sign(dtls_cert, dtls_pkey, EVP_sha1()) != 0);
+        srs_assert(X509_sign(dtls_cert, dtls_pkey, EVP_sha256()) != 0);
 
         X509_NAME_free(subject);
     }
